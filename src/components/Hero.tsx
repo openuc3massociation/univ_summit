@@ -3,16 +3,14 @@ import "../index.css";
 
 const Hero: FC = () => (
   <section className="hero">
-    <div className="hero-text">
-      <h1>“Aquí iría un slogan super inspirador”</h1>
-      <p>
-        Aquí iría lo que es una descripción super breve estilo. ¿Quieres
-        sumergirte más en el mundo de la UC3M? o algo como el mayor evento
-        universitario de emprendedores de Madrid (nuestra misión o algo así)
+    <div className="overlay"/>
+    <div className="content">
+      <h1>Más allá de tus clases</h1>
+      <p>Acércate a conocer las tres salidas de la universidad. 
+        Si tienes ganas de hacer tu experiencia...
       </p>
-      <button className="cta-button">Sé parte del cambio</button>
+      <button className="cta">Sé parte del cambio</button>
     </div>
-    <div className="hero-image">{/* Optional hero graphic */}</div>
   </section>
 );
 

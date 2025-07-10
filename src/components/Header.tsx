@@ -11,22 +11,15 @@ const Header: FC = () => (
       <span className="separator">|</span>
       <span>LUGAR</span>
     </div>
-    <div className="navbar">
-      <img src={logo} alt="Logo" className="logo-nav" />
-      <nav className="nav-links">
-        <ul>
-          <li>
-            <a href="#agenda">AGENDA</a>
-          </li>
-          <li>
-            <a href="#speakers">PONENTES</a>
-          </li>
-          <li>
-            <a href="#sponsors">PATROCINADORES</a>
-          </li>
-          <li>
-            <a href="#faq">F&amp;Q</a>
-          </li>
+    <div className="header">
+      <div className="header-logo">
+        <img src={logo} alt="Uni Summit logo" />
+      </div>
+      <nav className="header-nav">
+        <ul className="header-menu">
+          <li>Agenda</li>
+          <li>Ponentes</li>
+          <li>Patrocinadores</li>
         </ul>
       </nav>
     </div>
