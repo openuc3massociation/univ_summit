@@ -9,7 +9,9 @@ const Header: FC = () => (
       <span className="separator">|</span>
       <span>FECHA</span>
       <span className="separator">|</span>
-      <span>LUGAR</span>
+      <span>UC3M LEGANÉS</span>
+      <span className="separator">|</span>
+      <span>CUENTA ATRÁS</span>
     </div>
     <div className="header">
       <div className="header-logo">
@@ -17,9 +19,9 @@ const Header: FC = () => (
       </div>
       <nav className="header-nav">
         <ul className="header-menu">
-          <li>Agenda</li>
-          <li>Ponentes</li>
-          <li>Patrocinadores</li>
+          <li>AGENDA</li>
+          <li>PONENTES</li>
+          <li>PATROCINADORES</li>
         </ul>
       </nav>
     </div>
