@@ -1,9 +1,21 @@
 import React, { FC } from "react";
-import logo from "../assets/Meta-Emblem.png";
+import logo from "../assets/UniSummitLetrasBlancas.png";
 import "../index.css";
 
 const Hero: FC = () => (
   <section className="hero">
+    <div className="header">
+      <div className="header-logo">
+        <img src={logo} alt="Uni Summit logo" />
+      </div>
+      <nav className="header-nav">
+        <ul className="header-menu">
+          <li>AGENDA</li>
+          <li>PONENTES</li>
+          <li>PATROCINADORES</li>
+        </ul>
+      </nav>
+    </div>
     <div className="overlay"/>
     <div className="content">
       <h1>Más allá de tus clases</h1>
