@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from "react";
-import logo from "../assets/UniSummitLetrasBlancas.png";
 import "../index.css";
 
 const Hero: FC = () => {
@@ -10,10 +9,38 @@ const Hero: FC = () => {
     seconds: 0
   });
 
-  useEffect(() => {
-    const targetDate = new Date('2026-03-12T00:00:00').getTime();// Fecha a cambiar)
+  const [animatedTime, setAnimatedTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
 
-    const interval = setInterval(() => {
+  // Función para animar números
+  const animateValue = (start: number, end: number, duration: number, callback: (value: number) => void) => {
+    const startTime = Date.now();
+    const animate = () => {
+      const now = Date.now();
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(start + (end - start) * easeOutQuart);
+      
+      callback(current);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    requestAnimationFrame(animate);
+  };
+
+  // Actualizar contador en tiempo real
+  useEffect(() => {
+    const targetDate = new Date('2026-03-12T00:00:00').getTime();
+
+    const updateCountdown = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -24,44 +51,73 @@ const Hero: FC = () => {
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
-    }, 1000);
-  
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
     return () => clearInterval(interval);
   }, []);
 
+  // Animar cuando cambian los valores
+  useEffect(() => {
+    const animationDuration = 800; // 800ms de duración
+
+    animateValue(animatedTime.days, timeLeft.days, animationDuration, (value) => {
+      setAnimatedTime(prev => ({ ...prev, days: value }));
+    });
+
+    animateValue(animatedTime.hours, timeLeft.hours, animationDuration, (value) => {
+      setAnimatedTime(prev => ({ ...prev, hours: value }));
+    });
+
+    animateValue(animatedTime.minutes, timeLeft.minutes, animationDuration, (value) => {
+      setAnimatedTime(prev => ({ ...prev, minutes: value }));
+    });
+
+    animateValue(animatedTime.seconds, timeLeft.seconds, animationDuration, (value) => {
+      setAnimatedTime(prev => ({ ...prev, seconds: value }));
+    });
+  }, [timeLeft]);
+
   return (
     <section className="hero">
-    <div className="content">
-      <h1>Tu uni es más de lo que crees...</h1>
-      <div className="countdown">
-        <div className="countdown-item">
-          <span className="countdown-number">{timeLeft.days}</span>
+      <div className="content">
+        <h1>Tu uni es más de lo que crees...</h1>
+        <div className="countdown">
+          <div className="countdown-item">
+            <span className="countdown-number animated-number">{animatedTime.days}</span>
+            <span className="countdown-label">Días</span>
+          </div>
+          <div className="countdown-item">
+            <span className="countdown-number animated-number">{animatedTime.hours}</span>
+            <span className="countdown-label">Horas</span>
+          </div>
+          <div className="countdown-item">
+            <span className="countdown-number animated-number">{animatedTime.minutes}</span>
+            <span className="countdown-label">Minutos</span>
+          </div>
+          <div className="countdown-item">
+            <span className="countdown-number animated-number">{animatedTime.seconds}</span>
+            <span className="countdown-label">Segundos</span>
+          </div>
         </div>
-        <div className="countdown-item">
-          <span className="countdown-number">{timeLeft.hours}</span>
+        <div className="email-container">
+          <input type="email" placeholder="¡Apúntate!" className="email-input" />
+          <button className="email-button">
+            <span>→</span>
+          </button>
         </div>
-        <div className="countdown-item">
-          <span className="countdown-number">{timeLeft.minutes}</span>
-        </div>
-        <div className="countdown-item">
-          <span className="countdown-number">{timeLeft.seconds}</span>
-        </div>
+        <p>4 años, 1.461 días, 35.064 horas, 2.103.840 minutos y 126.230.400 segundos</p>
+        <br />
+        <p>Demasiado tiempo dura tu etapa universitaria como para dedicarla solo a las clases y a los exámenes.</p>
+        <br />
+        <p className="cta">Es hora de cambiar eso</p>
       </div>
-      <div className="email-container">
-        <input type="email" placeholder="¡Apúntate!" className="email-input" />
-        <button className="email-button">
-          <span>→</span>
-        </button>
-      </div>
-      <p>4 años, 1.461 días, 35.064 horas, 2.103.840 minutos y 126.230.400 segundos. 
-        <br /><br />
-      Demasiado tiempo dura tu etapa universitaria como para dedicarla solo a las clases y a los exámenes. 
-      </p>
-      <br /><br />
-      <p className="cta">Es hora de cambiar eso</p>
-    </div>
-  </section>
+    </section>
   );
 };
 

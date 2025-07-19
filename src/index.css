@@ -194,6 +194,21 @@ button { cursor: pointer; border: none;}
   margin-bottom: 0.5rem;
 }
 
+.animated-number {
+  transition: all 0.3s ease-out;
+  transform-origin: center;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
 
 /* About Section */
 .about {
