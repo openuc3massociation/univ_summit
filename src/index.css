@@ -91,13 +91,6 @@ button { cursor: pointer; border: none;}
   background-color: #45BAED;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, #ffcc00b3,  #3399ffb3);
-  z-index: 0;
-}
-
 .content {
   position: absolute;
   top: 50%;
@@ -173,6 +166,33 @@ button { cursor: pointer; border: none;}
   font-weight: bold;
 }
 
+.countdown{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background-color: #3D7DDA;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  min-width: 80px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
 
 
 /* About Section */
