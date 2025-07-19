@@ -1,16 +1,23 @@
 import React, { FC } from "react";
+import logo from "../assets/UniSummitLetrasBlancas.svg";
 import "../index.css";
 
 const Header: FC = () => (
   <header>
     <div className="topbar">
-      <span>UNIV SUMMIT MADRID</span>
-      <span className="separator">|</span>
-      <span>FECHA</span>
-      <span className="separator">|</span>
-      <span>UC3M</span>
-      <span className="separator">|</span>
-      <span>CUENTA ATRÁS</span>
+      <div className="header-logo">
+        <img src={logo} alt="Uni Summit logo" />
+      </div>  
+      <div className="header">
+      <nav className="header-nav">
+        <ul className="header-menu">
+          <li>AGENDA</li>
+          <li>PONENTES</li>
+          <li>PATROCINADORES</li>
+          <button className="cta-navbar">APÚNTATE</button>
+        </ul>
+      </nav>
+    </div>
     </div>
   </header>
 );

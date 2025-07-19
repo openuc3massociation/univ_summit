@@ -4,25 +4,20 @@ import "../index.css";
 
 const Hero: FC = () => (
   <section className="hero">
-    <div className="header">
-      <div className="header-logo">
-        <img src={logo} alt="Uni Summit logo" />
-      </div>
-      <nav className="header-nav">
-        <ul className="header-menu">
-          <li>AGENDA</li>
-          <li>PONENTES</li>
-          <li>PATROCINADORES</li>
-        </ul>
-      </nav>
-    </div>
-    <div className="overlay"/>
     <div className="content">
-      <h1>Más allá de tus clases</h1>
-      <p>Acércate a conocer las tres salidas de la universidad. 
-        Si tienes ganas de hacer de tu experiencia en la universidad algo único, este es tu lugar!
+      <h1>Tu uni es más de lo que crees...</h1>
+      <div className="email-container">
+        <input type="email" placeholder="¡Apúntate!" className="email-input" />
+        <button className="email-button">
+          <span>→</span>
+        </button>
+      </div>
+      <p>4 años, 1.461 días, 35.064 horas, 2.103.840 minutos y 126.230.400 segundos. 
+        <br /><br />
+      Demasiado tiempo dura tu etapa universitaria como para dedicarla solo a las clases y a los exámenes. 
       </p>
-      <button className="cta">Sé parte del cambio</button>
+      <br /><br />
+      <p className="cta">Es hora de cambiar eso</p>
     </div>
   </section>
 );

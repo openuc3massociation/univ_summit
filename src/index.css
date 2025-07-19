@@ -1,34 +1,44 @@
 /* Global Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body { font-family: 'Montserrat', Arial, sans-serif; color: #333; line-height: 1.5; }
+body { 
+  font-family: 'Montserrat', Arial, sans-serif; 
+  color: #333; 
+  line-height: 1.5; 
+  padding-top: 70px;
+}
 
 a { text-decoration: none; color: inherit; }
 
 button { cursor: pointer; border: none;}
 
-/* Top bar */
+/*------------------------------Top bar------------------------*/
 .topbar {
   background-color: #45BAED;
   padding: 8px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 12px;
   font-size: 24;
   width: 100%;
   height: 70px;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-family: 'Montserrat';
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   color: #fff;
 }
-.topbar .separator { margin: 0 6px; }
 
-/* Logo & nav */
+.topbar .header-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .header {
   position: relative;
-  z-index: 2; /* Por encima del overlay */
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,14 +47,17 @@ button { cursor: pointer; border: none;}
   color: #fff;
 }
 
-.header-logo img{
-  height: 120px;
+.topbar.header-logo img{
+  height: 80%;
+  width: auto;
 }
 
 .header-nav .header-menu {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  font-weight: bold;
+  align-items: center;
 }
 
 .header-nav .header-menu li {
@@ -53,21 +66,36 @@ button { cursor: pointer; border: none;}
   font-weight: bold;
 }
 
-/* Hero Section */
+.cta-navbar {
+  background-color: #FFCF33;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 2rem;
+  width: 140px;
+  height: 30px;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-navbar:hover {
+  background-color: #ffcc00d8;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+
+/* ------------------------Hero Section------------------------ */
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('/hero_bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #45BAED;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, #ffcc00b3,  #3399ffb3);
-  z-index: 0; /* Por debajo del header */
+  z-index: 0;
 }
 
 .content {
@@ -76,38 +104,76 @@ button { cursor: pointer; border: none;}
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: #000;
+  color: #ffffff;
   text-align: center;
   width: 100%;
   max-width: 800px;
 }
 
 .content h1 {
-  font-weight: 300;
-  font-style: italic;
-  color: #22628A;
-  font-size: 4rem;
+  font-weight: bold;
+  font-size: 2rem;
   padding: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .cta {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  border: 3px solid #ffffff;
-  background-color: #22628A;
-  border-radius: 5rem;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
+  font-weight: bold;
 }
 
-.cta:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  transform: scale(1.05);
+.email-container {
+  display: flex;
+  align-items: center;
+  background-color: #FFCF33;
+  border-radius: 50px;
+  padding: 8px;
+  margin: 2rem 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+.email-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.email-input::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+
+.email-button {
+  background-color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.email-button:hover {
+  background-color: #cbe2fc;
+  transform: translateX(2px);
+}
+
+.email-button span {
+  color: #3399FF;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
 
 /* About Section */
 .about {
@@ -176,8 +242,8 @@ button { cursor: pointer; border: none;}
 
 .about-img img {
   width: 100%;
-  height: auto; /* Maintains aspect ratio */
-  display: block; /* Optional: to cover the entire space without distortion */
+  height: auto;
+  display: block;
 }
 
 /* Stats Section */
