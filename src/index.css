@@ -76,7 +76,7 @@ button { cursor: pointer; border: none;}
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: #ffffff;
+  color: #000;
   text-align: center;
   width: 100%;
   max-width: 800px;
@@ -85,23 +85,23 @@ button { cursor: pointer; border: none;}
 .content h1 {
   font-weight: 300;
   font-style: italic;
+  color: #22628A;
   font-size: 4rem;
   padding: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .cta {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   border: 3px solid #ffffff;
+  background-color: #22628A;
   border-radius: 5rem;
-  background: transparent;
   color: #ffffff;
   cursor: pointer;
   font-size: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease;
-  font-family: 'Oswald', sans-serif;
-  font-weight: bold;
 }
 
 .cta:hover {
@@ -112,9 +112,50 @@ button { cursor: pointer; border: none;}
 /* About Section */
 .about {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   padding: 4rem 2rem;
   gap: 2rem;
+}
+
+.line {
+  height: 3px;
+}
+
+.line-1 {
+  width: 80%;
+  min-width: 300px;
+  background-color: #3399ffb3;
+}
+
+.line-2 {
+  width: 66%;
+  min-width: 200px;
+  background-color: #ffcc00b3;
+}
+
+.line-3 {
+  width: 55%;
+  min-width: 150px;
+  background-color: #3399ffb3;
+}
+
+.about-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-lines {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .about-text {
