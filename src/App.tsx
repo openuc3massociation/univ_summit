@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Stats from "./components/Stats"
 import FAQ from "./components/FAQ"
+import Footer from "./components/Footer";
 
 const App: FC = () => (
   <>
@@ -13,6 +14,7 @@ const App: FC = () => (
     <About />
     <Stats />
     <FAQ />
+    <Footer />
   </>
 );
 

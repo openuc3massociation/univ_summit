@@ -265,6 +265,7 @@ button { cursor: pointer; border: none;}
   flex-direction: column;
   padding: 4rem 2rem;
   gap: 2rem;
+  position: relative;
 }
 
 .line {
@@ -298,7 +299,7 @@ button { cursor: pointer; border: none;}
 
 .about-lines {
   position: absolute;
-  top: -50px;
+  top: 1rem;
   left: 0;
   z-index: 10;
   display: flex;
@@ -310,7 +311,7 @@ button { cursor: pointer; border: none;}
 
 .about-lines-bottom {
   position: absolute;
-  bottom: -50px;
+  bottom: -2rem;
   right: 0;
   z-index: 10;
   display: flex;
@@ -470,31 +471,116 @@ button { cursor: pointer; border: none;}
 /*----------------------------------------FAQ Section-----------------------------------------------*/
 
 .faq {
+  margin-top: 4rem;
+  text-align: center;
+  position: relative;
   padding: 2rem;
+  padding-bottom: 5rem;
 }
 
-.faq-item {
+.faq .about-lines {
+  position: absolute;
+  top: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.faq .about-lines-2 {
+  position: absolute;
+  top: -40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.faq-title {
+  color: #45BAED;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
   margin-bottom: 1rem;
 }
 
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
+.faq-container {
+  margin: 0 auto;
   text-align: left;
-  font-size: 1.1rem;
+}
+
+.faq-item {
+  border-bottom: 2px solid;
+  padding: 1rem 0;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item.blue {
+  border-color: #45BAED;
+  color: #45BAED
+}
+
+.faq-item.yellow {
+  border-color: #FFCF33;
+  color: #FFCF33;
+}
+
+.faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 400;
+  font-size: 20px;
+  padding-left: 4rem;
 }
 
 .faq-answer {
   margin-top: 0.5rem;
-  padding-left: 1rem;
-  color: #555;
+  font-size: 14px;
+  color: #444;
 }
 
-.faq-icon {
-  font-weight: bold;
+.faq-arrow {
+  transition: transform 0.2s ease;
+  padding-right: 4rem;
 }
+
+.faq-arrow.open {
+  transform: rotate(180deg);
+}
+
+.faq .about-lines-bottom {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/*----------------------------------------Footer Section-----------------------------------------------*/
+.footer {
+  display: flex;
+  background-color: #45BAED;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.footer-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 120px;
+  width: auto;
+  padding-left: 1rem;
+}
+

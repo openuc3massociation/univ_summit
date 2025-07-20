@@ -1,32 +1,75 @@
-import React, {FC, use, useState} from "react";
+import React, {FC, useState} from "react";
+import "../index.css";
 
-interface FAQItemProps { 
+type FAQItem = {
     question: string;
-    answer: string;    
-}
+    answer: string;
+    color: "blue" | "yellow";
+};
 
-const faqData: FAQItemProps[] = [
-    { question: '¿Qué días es?', answer: 'El evento será del 10 al 12 de Marzo.'},
-    { question: '¿Necesito experiencia previa?', answer: 'No es necesaria experiencia previa, solo tus ganas.'},
+const faqData: FAQItem[] = [
+    {
+        question: "¿Qué días se celebrará el evento?",
+        answer: "El evento se celebrará los días 15 y 16 de Marzo",
+        color: "blue",
+    },
+    {
+        question: "¿Dónde se llevará a cabo el evento?",
+        answer: "El evento tendrá lugar en la Universidad Carlos III de Madrid.",
+        color: "yellow",
+    },
+    {
+        question: "¿Cómo puedo registrarme?",
+        answer: "Puedes registrarte a través de nuestra página web. ¡No te lo pierdas!",
+        color: "blue",
+    },
+    {
+        question: "¿Habrá ponentes?",
+        answer: "Sí, contaremos con la presencia de destacados ponentes que han pasado por la UC3M.",
+        color: "yellow",
+    },
 ];
 
-const FAQ: FC = () => (
-    <section className="faq">
-        {faqData.map((item, idx) => (
-            <FAQItem key={idx} {...item} />
-        ))}
-    </section>
-);
+const FAQ: FC = () => {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-const FAQItem: FC<FAQItemProps> = ({ question, answer }) => {
-    const [open, setOpen] = useState(false);
+    const toggle = (index: number) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
     return (
-        <div className="faq-item">
-            <button onClick={() => setOpen(!open)} className="faq-question">
-                {question} <span className="faq-icon">{open ? '-' : '+'}</span>
-            </button>
-            {open && <div className="faq-answer">{answer}</div>}
-        </div>
+        <section className="faq">
+            <div className="about-lines">
+              <div className="line line-1"></div> 
+            </div>
+            <div className="about-lines-2">
+                <div className="line line-2"></div>
+                <div className="line line-3"></div>
+            </div>
+            <h2 className="faq-title">FAQ</h2>
+            <div className="faq-container">
+                {faqData.map((item, index) => (
+                    <div key={index} className={`faq-item ${item.color}`}>
+                        <div className="faq-question" onClick={() => toggle(index)}>
+                            <span>{item.question}</span>
+                            <span className={`faq-arrow ${openIndex === index ? "open" : ""}`}>
+                                &#x25BC;
+                            </span>
+                        </div>
+                        {openIndex === index && (
+                            <div className="faq-answer">
+                                <p>{item.answer}</p>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+            <div className="about-lines-bottom">
+                <div className="line line-1"></div>
+                <div className="line line-2"></div>
+                <div className="line line-3"></div>
+            </div>
+        </section>
     );
 };
 
