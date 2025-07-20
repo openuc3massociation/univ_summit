@@ -1,5 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import "../index.css";
+import semicirculos from "../assets/Semicirculos-hero-izqda.png"
+import circulo from "../assets/Circulo_hero.svg"
 
 const Hero: FC = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -85,6 +87,12 @@ const Hero: FC = () => {
 
   return (
     <section className="hero">
+      <div className="semicirculos">
+        <img src={semicirculos} alt="Semicírculos decorativos" />
+      </div>
+      <div className="circulo">
+        <img src={circulo} alt="Círculo decorativo" />
+      </div>
       <div className="content">
         <h1>Tu uni es más de lo que crees...</h1>
         <div className="countdown">

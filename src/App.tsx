@@ -13,7 +13,6 @@ const App: FC = () => (
     <Hero />
     <About />
     <Stats />
-    <BubbleImg />
     <FAQ />
   </>
 );

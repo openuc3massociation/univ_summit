@@ -38,11 +38,31 @@ const Stats: FC = () => {
     ];
 
     return (
-        <section className="stats">
-            {stats.map((item) => (
-                <StatItem key={item.text} {...item} />
-            ))}
-        </section>
+        <>
+            <section className="stats">
+                {stats.map((item) => (
+                    <StatItem key={item.text} {...item} />
+                ))}
+            </section>
+            <section className="bubbles">
+                <div className="bubble">
+                    <img src="" alt="Empresas" className="bubble-img" />
+                    <img src="" alt="Startups" className="bubble-img" />
+                    <img src="" alt="Participantes" className="bubble-img" />
+                </div>
+            </section>
+            <section className="mission-values">
+                <div className="mission-section">
+                    <h2>NUESTRA MISIÓN</h2>
+                    <p>No vamos a descansar hasta que consigamos que puedas poner al servicio de tu desarrollo profesional todo tu potencial.</p>
+                    <p>De la mano de referentes en el sector, este evento va a ser el exponente que necesita tu esfuerzo para multiplicarse y descubrirte un nuevo horizonte.</p>
+                </div>
+                <div className="values-section">
+                    <h2>NUESTROS VALORES</h2>
+                    <p>Innovarte</p>
+                </div>
+            </section>
+        </>
     );
 };
 

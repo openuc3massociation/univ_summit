@@ -11,13 +11,22 @@ const About: FC = () => (
         <div className="line line-3"></div>
       </div>
       <div className="about-text">
-        <h2>¿Qué es Uni Summit?</h2>
-        <p>Es el evento del año, de aquí sales empresario/a millonario, vas a salir más inspirado que después de un paseo por la playa. 
-  No dudes en apuntarte, si no pues nada te vas a perder el eventazo del año. Después de esto tu futuro de éxito está asegurado ;) (aquí iría una descripción mejor que esta :)
-        </p>
+        <h2>Más allá de tus clases</h2>
+        <p>La Universidad es mucho más que estar sentado en el aula, lo sabemos todos bien.
+            <br /><br />
+           En UniSummit, te ponemos todas las opciones al alcance de tu mano. 
+            <br /><br />
+           Con un clic entrarás en el evento universitario más importante de España.
+            <br /><br />
+           Y nosotros haremos el resto...</p>
       </div>
       <div className="about-img">
         <img src={evento} alt="evento" />
+      </div>
+      <div className="about-lines-bottom">
+        <div className="line line-3"></div>
+        <div className="line line-2"></div>
+        <div className="line line-1"></div>
       </div>
     </div>
   </section>
