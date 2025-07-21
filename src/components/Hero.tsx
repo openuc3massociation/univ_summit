@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import "../index.css";
 import semicirculos from "../assets/Semicirculos-hero-izqda.png"
 import circulo from "../assets/Circulo_hero.svg"
+import elipse from "../assets/Semicirculo-simple.png"
 
 const Hero: FC = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -92,6 +93,9 @@ const Hero: FC = () => {
       </div>
       <div className="circulo">
         <img src={circulo} alt="Círculo decorativo" />
+      </div>
+      <div className="elipse">
+        <img src={elipse} alt="Elipse decorativa" />
       </div>
       <div className="content">
         <h1>Tu uni es más de lo que crees...</h1>

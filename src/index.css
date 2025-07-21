@@ -87,7 +87,7 @@ button { cursor: pointer; border: none;}
 /* -------------------------------------------Hero Section---------------------------------------- */
 .hero {
   position: relative;
-  height: 120vh;
+  height: 100vh;
   background-color: #45BAED;
   overflow: hidden;
 }
@@ -139,6 +139,10 @@ button { cursor: pointer; border: none;}
   object-fit: cover;
 }
 
+.elipse {
+  position: absolute;
+  right: 0;
+}
 
 .content {
   position: absolute;
@@ -390,6 +394,17 @@ button { cursor: pointer; border: none;}
   z-index: 1;
 }
 
+.bubbles::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 100px;
+  background: #45BAED;
+  z-index: 0;
+}
+
 .bubble {
   position: relative;
   z-index: 2;
@@ -420,20 +435,26 @@ button { cursor: pointer; border: none;}
   transition: transform 0.3s ease;
 }
 
+
+
 /*----------------------------------------Mission & Values Section-----------------------------------------------*/
 .mission-values {
   display: flex;
   min-height: 60vh;
+  position: relative;
 }
 
 .mission-section {
   flex: 1;
   background-color: #45BAED;
   color: white;
-  padding: 4rem 3rem;
+  padding: 4rem 3rem 6rem 3rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
+  align-items: center;
+  overflow: visible;
 }
 
 .values-section {
@@ -444,6 +465,8 @@ button { cursor: pointer; border: none;}
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
+  align-items: center;
 }
 
 .mission-section h2,
@@ -452,7 +475,7 @@ button { cursor: pointer; border: none;}
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 2rem;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
 }
 
 .mission-section p,
@@ -462,10 +485,74 @@ button { cursor: pointer; border: none;}
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-weight: 300;
+  max-width: 400px;
 }
 
-.mission-section {
-  position: relative;
+.mission-section img {
+  width: 30px;
+}
+
+.valores-abajo {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  z-index: 10;
+}
+
+.valores-abajo img {
+  width: 200px;
+  height: auto;
+}
+
+.valores-arriba {
+  position: absolute;
+  right: 80%;
+  top: -10px;
+  z-index: 1000;
+  transform: translateY(-30%);
+}
+
+.valores-arriba img {
+  width: 170px;
+  height: auto;
+}
+
+.mision-abajo {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  z-index: 100;
+}
+
+.mision-abajo img {
+  width: 400px;
+  height: auto;
+}
+
+.mision-arriba {
+  position: absolute;
+  right: 80%;
+  top: -10px;
+  z-index: 1000;
+  transform: translateY(-30%);
+}
+
+.mision-arriba img {
+  width: 150px;
+  height: auto;
+}
+
+.valores-lateral {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.valores-lateral img {
+  width: 80px;
+  height: auto;
 }
 
 /*----------------------------------------FAQ Section-----------------------------------------------*/
@@ -501,6 +588,7 @@ button { cursor: pointer; border: none;}
   color: #45BAED;
   font-size: 40px;
   font-weight: bold;
+  letter-spacing: 4px;
   font-family: 'Oswald', sans-serif;
   margin-bottom: 1rem;
 }
@@ -560,6 +648,20 @@ button { cursor: pointer; border: none;}
   align-items: flex-end;
   gap: 0.5rem;
   width: 100%;
+}
+
+/*----------------------------------------Founder Section-----------------------------------------------*/
+.founders{
+  display: flex;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  background-color: #FFCF33;
+}
+
+.founders h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  letter-spacing: 4px;
 }
 
 /*----------------------------------------Footer Section-----------------------------------------------*/
