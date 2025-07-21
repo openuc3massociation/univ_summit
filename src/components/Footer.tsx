@@ -7,6 +7,9 @@ const Footer: FC = () => (
         <div className="footer-logo">
             <img src={logo} alt="Uni Summit logo" />
         </div>
+        <div className="contacto">
+            <p>contacto@unisummit.org</p>
+        </div>
     </footer>
     );
 
