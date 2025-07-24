@@ -24,11 +24,11 @@ const About: FC = () => (
       <div className="about-img">
         <img src={evento} alt="evento" />
       </div>
-      <div className="about-lines-bottom">
-        <div className="line line-3"></div>
-        <div className="line line-2"></div>
-        <div className="line line-1"></div>
-      </div>
+    </div>
+    <div className="about-lines-bottom">
+      <div className="line line-3"></div>
+      <div className="line line-2"></div>
+      <div className="line line-1"></div>
     </div>
   </section>
 );

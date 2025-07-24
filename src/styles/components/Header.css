@@ -2,7 +2,6 @@
    HEADER - MOBILE FIRST RESPONSIVE
 ============================================== */
 
-/* Prevent horizontal scroll caused by fixed header */
 html, body {
   overflow-x: hidden;
   max-width: 100%;
@@ -10,7 +9,7 @@ html, body {
 
 .topbar {
   background-color: #45BAED;
-  padding: 8px 16px; /* Padding más conservador */
+  padding: 8px 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,7 +22,7 @@ html, body {
   left: 0;
   z-index: 2500;
   color: #fff;
-  box-sizing: border-box; /* Importante para incluir padding en width */
+  box-sizing: border-box;
 }
 
 .topbar .header-logo {
@@ -38,9 +37,6 @@ html, body {
   width: auto;
 }
 
-/* ==============================================
-   HAMBURGER BUTTON - MOBILE
-============================================== */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -67,7 +63,6 @@ html, body {
   background-color: #FFCF33;
 }
 
-/* Hamburger Animation - Active State */
 .hamburger-active span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
@@ -80,14 +75,11 @@ html, body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* ==============================================
-   NAVIGATION - MOBILE
-============================================== */
 .header {
   position: fixed;
   top: 70px;
   right: -100%;
-  width: min(300px, 85vw); /* Responsive width que se adapta al viewport */
+  width: min(300px, 85vw);
   height: calc(100vh - 70px);
   background-color: #45BAED;
   transition: right 0.3s ease;
@@ -160,12 +152,10 @@ html, body {
   transform: scale(1.05);
 }
 
-/* Menu Open State */
 .header.nav-open {
   right: 0 !important;
 }
 
-/* Overlay for mobile menu */
 .nav-overlay {
   position: fixed;
   top: 70px;
@@ -182,39 +172,39 @@ html, body {
 ============================================== */
 @media (max-width: 479px) {
   .topbar {
-    padding: 8px 12px; /* Padding aún más reducido */
-    height: 60px; /* Altura reducida para pantallas pequeñas */
+    padding: 8px 12px;
+    height: 60px;
   }
   
   .topbar .header-logo img {
-    height: 75%; /* Logo ligeramente más pequeño */
+    height: 75%;
   }
   
   .hamburger {
-    width: 25px; /* Hamburger más pequeño */
+    width: 25px;
     height: 20px;
   }
   
   .header {
     top: 60px;
-    width: min(250px, 80vw); /* Menú más estrecho en móviles pequeños */
+    width: min(250px, 80vw);
     height: calc(100vh - 60px);
   }
   
   .header-nav {
-    padding: 1.5rem 1rem; /* Padding reducido */
+    padding: 1.5rem 1rem;
   }
   
   .header-nav .header-menu {
-    gap: 1.5rem; /* Gap reducido */
+    gap: 1.5rem;
   }
   
   .header-nav .header-menu li {
-    font-size: 1rem; /* Texto más pequeño */
+    font-size: 1rem;
   }
   
   .cta-navbar {
-    width: 150px; /* Botón más pequeño */
+    width: 150px;
     height: 40px;
     font-size: 0.9rem;
   }
@@ -243,7 +233,7 @@ html, body {
 ============================================== */
 @media (min-width: 768px) {
   .topbar {
-    padding: 8px 24px; /* Padding responsive para tablet */
+    padding: 8px 24px;
   }
 
   .hamburger {
@@ -301,7 +291,7 @@ html, body {
 ============================================== */
 @media (min-width: 1024px) {
   .topbar {
-    padding: 8px 32px; /* Padding responsive para desktop */
+    padding: 8px 32px;
   }
 
   .header-nav .header-menu {
@@ -313,7 +303,7 @@ html, body {
   }
 
   .cta-navbar {
-    width: 160px;
+    width: fit-content;
     height: 35px;
     font-size: 1rem;
   }
@@ -324,7 +314,7 @@ html, body {
 ============================================== */
 @media (min-width: 1200px) {
   .topbar {
-    padding: 8px 48px; /* Padding creciente para pantallas grandes */
+    padding: 8px 48px;
   }
 
   .header-nav .header-menu {
@@ -334,6 +324,10 @@ html, body {
   .header-nav .header-menu li {
     font-size: 1.2rem;
   }
+
+  .cta-navbar {
+    width: fit-content;
+  }
 }
 
 /* ==============================================
@@ -341,7 +335,7 @@ html, body {
 ============================================== */
 @media (min-width: 1400px) {
   .topbar {
-    padding: 8px 60px; /* Padding máximo para pantallas extra grandes */
+    padding: 8px 60px;
   }
 
   .header-nav .header-menu {
@@ -362,7 +356,6 @@ html, body {
   outline-offset: 2px;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hamburger,
   .hamburger span,

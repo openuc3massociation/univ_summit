@@ -6,6 +6,9 @@ import valores_arriba from "../assets/valores-arriba.svg";
 import valores_lado from "../assets/valores-lado.svg";
 import mision_abajo from "../assets/mision-abajo.svg";
 import mision_arriba from "../assets/mision-arriba.svg"
+import startup from "../assets/startup.jpg"
+import participantes from "../assets/participantes.jpg"
+import empresas from "../assets/empresas.png"
 
 interface StatItemProps {
     label: string;
@@ -52,9 +55,9 @@ const Stats: FC = () => {
             </section>
             <section className="bubbles">
                 <div className="bubble">
-                    <img src="" alt="Empresas" className="bubble-img" />
-                    <img src="" alt="Startups" className="bubble-img" />
-                    <img src="" alt="Participantes" className="bubble-img" />
+                    <img src={empresas} alt="Empresas" className="bubble-img" />
+                    <img src={startup} alt="Startups" className="bubble-img" />
+                    <img src={participantes} alt="Participantes" className="bubble-img" />
                 </div>
             </section>
             <section className="mission-values">

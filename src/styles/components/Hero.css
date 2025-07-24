@@ -199,6 +199,18 @@
       width: 80%;
     }
 
+    .email-button {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+      flex-shrink: 0;
+    }
+
+    .email-button span {
+      font-size: 1.4rem;
+    }
+
     .circulo {
       width: 50%;
       height: auto;
@@ -208,4 +220,52 @@
       max-width: 400px;
     }
 
+}
+
+@media (max-width: 480px) {
+    .email-container {
+      width: 90%;
+      padding: 0.8rem;
+    }
+
+    .email-input {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .email-button {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      flex-shrink: 0;
+    }
+
+    .email-button span {
+      font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .email-container {
+      width: 95%;
+      padding: 0.7rem;
+    }
+
+    .email-input {
+      padding: 0.7rem 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .email-button {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      min-height: 45px;
+      flex-shrink: 0;
+    }
+
+    .email-button span {
+      font-size: 1.2rem;
+    }
 }
