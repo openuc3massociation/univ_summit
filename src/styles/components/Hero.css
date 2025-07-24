@@ -1,0 +1,211 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-color: #45BAED;
+  overflow: hidden;
+}
+
+.semicirculos {
+  position: absolute;
+  left: 0;
+  z-index: 1500;
+  animation: floatDown 10s linear infinite;
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.semicirculos img {
+  width: 100%;
+  height: auto;
+}
+
+.circulo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  transform: translate(50%, 50%);
+  z-index: 500;
+  animation: rotateCircle 15s linear infinite;
+}
+
+@keyframes rotateCircle {
+  0% {
+    transform: translate(50%, 50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(50%, 50%) rotate(360deg);
+  }
+}
+
+.circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.elipse {
+  position: absolute;
+  right: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  color: #ffffff;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.content h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.cta {
+  font-weight: bold;
+}
+
+.email-container {
+  display: flex;
+  align-items: center;
+  background-color: #FFCF33;
+  border-radius: 50px;
+  padding: 8px;
+  margin: 2rem 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.email-input::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+
+.email-button {
+  background-color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.email-button:hover {
+  background-color: #cbe2fc;
+  transform: translateX(2px);
+}
+
+.email-button span {
+  color: #3399FF;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.countdown{
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background-color: #3D7DDA;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  min-width: 80px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-number {
+  display: block;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.animated-number {
+  transition: all 0.3s ease-out;
+  transform-origin: center;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .hero {
+      width: auto;
+    }
+
+    .semicirculos {
+      width: 40%;
+      animation: floatDown 8s linear infinite
+    }
+
+    @keyframes floatDown {
+      0% {
+        transform: translateY(-100vh);
+      }
+
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+    .email-container{
+      width: 80%;
+    }
+
+    .circulo {
+      width: 50%;
+      height: auto;
+    }
+
+    .content {
+      max-width: 400px;
+    }
+
+}

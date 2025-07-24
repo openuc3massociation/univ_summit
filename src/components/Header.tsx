@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import logo from "../assets/UniSummitLetrasBlancas.svg";
 import "../index.css";
+import "../styles/components/Header.css"
 
 const Header: FC = () => (
   <header>

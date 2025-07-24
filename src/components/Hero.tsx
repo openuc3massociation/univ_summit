@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import "../index.css";
+import "../styles/components/Hero.css"
 import semicirculos from "../assets/Semicirculos-hero-izqda.png"
 import circulo from "../assets/Circulo_hero.svg"
 import elipse from "../assets/Semicirculo-simple.png"

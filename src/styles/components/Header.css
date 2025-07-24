@@ -1,0 +1,69 @@
+.topbar {
+  background-color: #45BAED;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 24;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  color: #fff;
+}
+
+.topbar .header-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #fff;
+}
+
+.topbar.header-logo img{
+  height: 80%;
+  width: auto;
+}
+
+.header-nav .header-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+}
+
+.header-nav .header-menu li {
+  cursor: pointer;
+  font-weight: 500;
+  font-weight: bold;
+}
+
+.cta-navbar {
+  background-color: #FFCF33;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 2rem;
+  width: 140px;
+  height: 30px;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-navbar:hover {
+  background-color: #ffcc00d8;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}

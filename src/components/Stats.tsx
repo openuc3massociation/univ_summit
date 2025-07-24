@@ -1,5 +1,6 @@
 import React, {FC, useEffect, useState} from "react";
 import "../index.css";
+import "../styles/components/Stats.css"
 import valores_abajo from "../assets/valores-abajo.svg"
 import valores_arriba from "../assets/valores-arriba.svg";
 import valores_lado from "../assets/valores-lado.svg";

@@ -1,13 +1,119 @@
-import React, {FC} from "react";
+import React, { FC, useState, useCallback, useMemo, useRef } from "react";
 import "../index.css";
+import "../styles/components/Founders.css"
+import fundador from "../assets/fundador.jpeg";
 
-const Founders: FC = () => (
-    <section className="founders">
-        <h1 className="founders-title">Nuestros Fundadores</h1>
-        <div className="founders-imgs">
+const TRANSITION_DURATION = 800;
+const VISIBLE_CARDS = 5;
+
+const Founders: FC = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
+    const [exitingCards, setExitingCards] = useState<{[key: number]: string}>({});
+    const transitionTimeoutRef = useRef<number | null>(null);
+
+    const founders = useMemo(() => [
+        { id: 1, name: "Alejandro", position: "CEO", image: fundador },
+        { id: 2, name: "Ioana", position: "CTO", image: fundador },
+        { id: 3, name: "Mario", position: "CMO", image: fundador },
+        { id: 4, name: "Sergio", position: "CFO", image: fundador },
+        { id: 5, name: "Enrique", position: "COO", image: fundador },
+        { id: 6, name: "Rubén", position: "CIO", image: fundador },
+        { id: 7, name: "Alberto", position: "CTO", image: fundador },
+    ], []);
+
+    const handleTransition = useCallback((direction: 'left' | 'right', indexChange: number) => {
+        if (isTransitioning) return;
+        
+        setIsTransitioning(true);
+        setSlideDirection(direction);
+        setCurrentIndex((prev) => (prev + indexChange + founders.length) % founders.length);
+        
+        setTimeout(() => {
+            setIsTransitioning(false);
+            setSlideDirection(null);
+        }, TRANSITION_DURATION + 400);
+    }, [isTransitioning, founders.length]);
+
+    const nextSlide = useCallback(() => handleTransition('right', 1), [handleTransition]);
+    const prevSlide = useCallback(() => handleTransition('left', -1), [handleTransition]);
+
+    const visibleFounders = useMemo(() => {
+        const visible = [];
+        const halfCards = Math.floor(VISIBLE_CARDS / 2);
+        
+        for (let i = -halfCards; i <= halfCards; i++) {
+            const index = (currentIndex + i + founders.length) % founders.length;
+
+            const shouldSlideIn = 
+                (slideDirection === 'right' && i === halfCards) ||
+                (slideDirection === 'left' && i === -halfCards);
             
-        </div>
-    </section>
-)
+            const shouldSlideOut =
+                (slideDirection === 'right' && i === -halfCards) ||
+                (slideDirection === 'left' && i === halfCards);
+            
+            visible.push({
+                ...founders[index],
+                position: i,
+                isCenter: i === 0,
+                shouldSlideIn,
+                shouldSlideOut,
+                slideDirection
+            });
+        }
+        return visible;
+    }, [currentIndex, slideDirection, founders]);
+
+    const handleCardClick = useCallback((position: number) => {
+        if (isTransitioning) return;
+        if (position < 0) prevSlide();
+        else if (position > 0) nextSlide();
+    }, [isTransitioning, prevSlide, nextSlide]);
+
+    return (
+        <section className="founders">
+            <h1>NUESTROS FUNDADORES</h1>
+            <div className="founders-carousel">
+                <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
+                    &#8249;
+                </button>
+                <div className="founders-container">
+                    {visibleFounders.map((founder, index) => {
+                        let slideClass = '';
+
+                        if (founder.shouldSlideIn) {
+                            slideClass = founder.slideDirection === 'right' ? 'slide-in-right' : 'slide-in-left';
+                        }
+
+                        if (founder.shouldSlideOut) {
+                            slideClass = founder.slideDirection === 'right' ? 'slide-out-left' : 'slide-out-right';
+                        }
+                        return (
+                            <div
+                                key={founder.id}
+                                className={`founder-card position-${index} ${founder.isCenter ? 'center' : ''} ${isTransitioning ? 'transitioning' : ''} ${slideClass}`}
+                                onClick={() => handleCardClick(founder.position)}
+                            >
+                                <img
+                                    src={founder.image}
+                                    alt={founder.name}
+                                    className="founder-img"
+                                />
+                                <div className="founder-info">
+                                    <h3>{founder.name}</h3>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+                <button className="carousel-btn carousel-btn-next" onClick={nextSlide}>
+                    &#8250;
+                </button>
+            </div>
+        </section>
+    );
+};
 
 export default Founders;

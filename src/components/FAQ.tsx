@@ -1,5 +1,6 @@
 import React, {FC, useState} from "react";
 import "../index.css";
+import "../styles/components/FAQ.css"
 
 type FAQItem = {
     question: string;
