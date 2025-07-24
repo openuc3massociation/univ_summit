@@ -83,174 +83,265 @@
   transition: transform 0.3s ease;
 }
 
-/*----------------------------------------Mission & Values Section-----------------------------------------------*/
+/*----------------------------------------Mission & Values Section - MOBILE FIRST RESPONSIVE-----------------------------------------------*/
 .mission-values {
   display: flex;
-  min-height: 60vh;
+  flex-direction: column;
+  min-height: auto;
   position: relative;
 }
 
 .mission-section {
-  flex: 1;
   background-color: #45BAED;
   color: white;
-  padding: 4rem 3rem 6rem 3rem;
+  padding: 2rem 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
   align-items: center;
+  text-align: center;
   overflow: visible;
+  min-height: 50vh;
 }
 
 .values-section {
-  flex: 1;
   background-color: #FFCF33;
   color: white;
-  padding: 4rem 3rem;
+  padding: 2rem 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
   align-items: center;
+  text-align: center;
+  min-height: 50vh;
 }
 
 .mission-section h2,
 .values-section h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 2rem;
-  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  z-index: 10;
+  position: relative;
 }
 
 .mission-section p,
 .values-section p {
   font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
   font-weight: 300;
-  max-width: 400px;
+  max-width: 90%;
+  z-index: 10;
+  position: relative;
+}
+
+.valores-abajo,
+.valores-arriba,
+.valores-lateral,
+.mision-abajo,
+.mision-arriba {
+  display: none;
 }
 
 .mission-section img {
   width: 30px;
 }
 
-.valores-abajo {
-  position: absolute;
-  bottom: -40px;
-  right: 0;
-  z-index: 10;
-}
-
-.valores-abajo img {
-  width: 200px;
-  height: auto;
-}
-
-.valores-arriba {
-  position: absolute;
-  right: 80%;
-  top: -10px;
-  z-index: 1000;
-  transform: translateY(-30%);
-}
-
-.valores-arriba img {
-  width: 170px;
-  height: auto;
-}
-
-.mision-abajo {
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  z-index: 100;
-}
-
-.mision-abajo img {
-  width: 400px;
-  height: auto;
-}
-
-.mision-arriba {
-  position: absolute;
-  right: 80%;
-  top: -10px;
-  z-index: 1000;
-  transform: translateY(-30%);
-}
-
-.mision-arriba img {
-  width: 150px;
-  height: auto;
-}
-
-.valores-lateral {
-  position: absolute;
-  right: 0;
-  top: 40%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.valores-lateral img {
-  width: 80px;
-  height: auto
-}
-
-@media (max-width: 768px) {
-  .stat-item h3{
-    font-size: 30px;
+@media (min-width: 480px) {
+  .mission-section,
+  .values-section {
+    padding: 2.5rem 2rem 3.5rem 2rem;
+    min-height: 45vh;
   }
-
-  .stat-item p {
+  
+  .mission-section h2,
+  .values-section h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+  
+  .mission-section p,
+  .values-section p {
     font-size: 1rem;
+    max-width: 80%;
   }
+}
 
-  .bubbles {
-    height: 100%;
-  }
-
-  .bubble {
-    gap: 2rem;
-  }
-
-  .bubble-img {
-    height: 80%;
-    width: fit-content;
-  }
-
+@media (min-width: 768px) {
   .mission-values {
+    flex-direction: row;
+    min-height: 60vh;
+  }
+  
+  .mission-section,
+  .values-section {
+    flex: 1;
+    padding: 3rem 2.5rem 4rem 2.5rem;
+    text-align: left;
+    align-items: flex-start;
+    min-height: 60vh;
+  }
+  
+  .mission-section h2,
+  .values-section h2 {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+  }
+  
+  .mission-section p,
+  .values-section p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 400px;
+  }
+  
+  .valores-abajo,
+  .valores-arriba,
+  .mision-abajo,
+  .mision-arriba {
+    display: block;
+  }
+  
+  .valores-abajo {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    z-index: 10;
+  }
+  
+  .valores-abajo img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .valores-arriba {
+    position: absolute;
+    right: 75%;
+    top: -5px;
+    z-index: 1000;
+    transform: translateY(-30%);
+  }
+  
+  .valores-arriba img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .mision-abajo {
+    position: absolute;
+    bottom: -35px;
+    left: 0;
+    z-index: 100;
+  }
+  
+  .mision-abajo img {
+    width: 250px;
+    height: auto;
+  }
+  
+  .mision-arriba {
+    position: absolute;
+    right: 75%;
+    top: -5px;
+    z-index: 1000;
+    transform: translateY(-30%);
+  }
+  
+  .mision-arriba img {
+    width: 90px;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mission-section,
+  .values-section {
+    padding: 4rem 3rem 5rem 3rem;
+  }
+  
+  .mission-section h2,
+  .values-section h2 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+  
+  .mission-section p,
+  .values-section p {
+    font-size: 1.1rem;
+    max-width: 450px;
+  }
+  
+  .valores-abajo {
+    bottom: -40px;
+  }
+  
+  .valores-abajo img {
+    width: 200px;
+  }
+  
+  .valores-arriba {
+    right: 80%;
+    top: -10px;
+  }
+  
+  .valores-arriba img {
+    width: 170px;
+  }
+  
+  .valores-lateral {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  
+  .valores-lateral img {
+    width: 80px;
+    height: auto;
+  }
+  
+  .mision-abajo {
+    bottom: -50px;
+  }
+  
+  .mision-abajo img {
     width: 400px;
   }
-
-  .mission-section {
-    flex: 1;
-  }
-
-  .values-section{
-    flex: 1;
-  }
-
-  .mision-abajo img{
-    width: 80%;
-  }
-
+  
   .mision-arriba {
-    right: 70%;
+    right: 80%;
+    top: -10px;
   }
-  .mision-arriba img{
-    width: 80px;
+  
+  .mision-arriba img {
+    width: 150px;
   }
+}
 
-  .valores-abajo img{
-    height: 100px;
+@media (min-width: 1200px) {
+  .mission-section,
+  .values-section {
+    padding: 4rem 4rem 6rem 4rem;
   }
-
-  .valores-arriba img{
-    width: 80px;
+  
+  .mission-section h2,
+  .values-section h2 {
+    font-size: 2.8rem;
+    letter-spacing: 5px;
+  }
+  
+  .mission-section p,
+  .values-section p {
+    font-size: 1.2rem;
+    max-width: 500px;
   }
 }

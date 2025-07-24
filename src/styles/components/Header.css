@@ -1,11 +1,21 @@
+/* ==============================================
+   HEADER - MOBILE FIRST RESPONSIVE
+============================================== */
+
+/* Prevent horizontal scroll caused by fixed header */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 .topbar {
   background-color: #45BAED;
-  padding: 8px 20px;
+  padding: 8px 16px; /* Padding más conservador */
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  font-size: 24;
+  font-size: 24px;
   width: 100%;
   height: 70px;
   position: fixed;
@@ -13,57 +23,352 @@
   left: 0;
   z-index: 2500;
   color: #fff;
+  box-sizing: border-box; /* Importante para incluir padding en width */
 }
 
 .topbar .header-logo {
   height: 100%;
   display: flex;
   align-items: center;
+  z-index: 2501;
 }
 
-.header {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  color: #fff;
-}
-
-.topbar.header-logo img{
+.topbar .header-logo img {
   height: 80%;
   width: auto;
+}
+
+/* ==============================================
+   HAMBURGER BUTTON - MOBILE
+============================================== */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2501;
+  transition: all 0.3s ease;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger:hover span {
+  background-color: #FFCF33;
+}
+
+/* Hamburger Animation - Active State */
+.hamburger-active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ==============================================
+   NAVIGATION - MOBILE
+============================================== */
+.header {
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: min(300px, 85vw); /* Responsive width que se adapta al viewport */
+  height: calc(100vh - 70px);
+  background-color: #45BAED;
+  transition: right 0.3s ease;
+  z-index: 2500;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.header-nav {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
 }
 
 .header-nav .header-menu {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 2rem;
   font-weight: bold;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .header-nav .header-menu li {
   cursor: pointer;
   font-weight: 500;
-  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ffffff;
+  padding: 0.75rem 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
+.header-nav .header-menu li:hover {
+  color: #FFCF33;
+  transform: translateX(10px);
+}
+
+.header-nav .header-menu li:last-child {
+  border-bottom: none;
+}
+
+/* CTA Button */
 .cta-navbar {
   background-color: #FFCF33;
   font-family: 'Montserrat', Arial, sans-serif;
   font-weight: bold;
   border-radius: 2rem;
-  width: 140px;
-  height: 30px;
+  width: 180px;
+  height: 45px;
   color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
 }
 
 .cta-navbar:hover {
   background-color: #ffcc00d8;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
+}
+
+/* Menu Open State */
+.header.nav-open {
+  right: 0 !important;
+}
+
+/* Overlay for mobile menu */
+.nav-overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2499;
+  backdrop-filter: blur(2px);
+}
+
+/* ==============================================
+   SMALL MOBILE (320px - 479px)
+============================================== */
+@media (max-width: 479px) {
+  .topbar {
+    padding: 8px 12px; /* Padding aún más reducido */
+    height: 60px; /* Altura reducida para pantallas pequeñas */
+  }
+  
+  .topbar .header-logo img {
+    height: 75%; /* Logo ligeramente más pequeño */
+  }
+  
+  .hamburger {
+    width: 25px; /* Hamburger más pequeño */
+    height: 20px;
+  }
+  
+  .header {
+    top: 60px;
+    width: min(250px, 80vw); /* Menú más estrecho en móviles pequeños */
+    height: calc(100vh - 60px);
+  }
+  
+  .header-nav {
+    padding: 1.5rem 1rem; /* Padding reducido */
+  }
+  
+  .header-nav .header-menu {
+    gap: 1.5rem; /* Gap reducido */
+  }
+  
+  .header-nav .header-menu li {
+    font-size: 1rem; /* Texto más pequeño */
+  }
+  
+  .cta-navbar {
+    width: 150px; /* Botón más pequeño */
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==============================================
+   LARGE MOBILE (480px - 767px)
+============================================== */
+@media (min-width: 480px) and (max-width: 767px) {
+  .topbar {
+    padding: 8px 18px;
+  }
+  
+  .header {
+    width: min(280px, 80vw);
+  }
+  
+  .cta-navbar {
+    width: 170px;
+    height: 42px;
+  }
+}
+
+/* ==============================================
+   TABLET (768px+)
+============================================== */
+@media (min-width: 768px) {
+  .topbar {
+    padding: 8px 24px; /* Padding responsive para tablet */
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .header {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .header-nav {
+    padding: 0;
+    align-items: center;
+  }
+
+  .header-nav .header-menu {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .header-nav .header-menu li {
+    padding: 0;
+    border-bottom: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .header-nav .header-menu li:hover {
+    transform: none;
+    color: #FFCF33;
+  }
+
+  .cta-navbar {
+    width: 140px;
+    height: 30px;
+    margin-top: 0;
+    font-size: 0.9rem;
+  }
+
+  .nav-overlay {
+    display: none;
+  }
+}
+
+/* ==============================================
+   DESKTOP (1024px+)
+============================================== */
+@media (min-width: 1024px) {
+  .topbar {
+    padding: 8px 32px; /* Padding responsive para desktop */
+  }
+
+  .header-nav .header-menu {
+    gap: 2rem;
+  }
+
+  .header-nav .header-menu li {
+    font-size: 1.1rem;
+  }
+
+  .cta-navbar {
+    width: 160px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+/* ==============================================
+   LARGE DESKTOP (1200px+)
+============================================== */
+@media (min-width: 1200px) {
+  .topbar {
+    padding: 8px 48px; /* Padding creciente para pantallas grandes */
+  }
+
+  .header-nav .header-menu {
+    gap: 2.5rem;
+  }
+
+  .header-nav .header-menu li {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==============================================
+   EXTRA LARGE DESKTOP (1400px+)
+============================================== */
+@media (min-width: 1400px) {
+  .topbar {
+    padding: 8px 60px; /* Padding máximo para pantallas extra grandes */
+  }
+
+  .header-nav .header-menu {
+    gap: 3rem;
+  }
+}
+
+/* ==============================================
+   ACCESSIBILITY
+============================================== */
+.hamburger:focus {
+  outline: 2px solid #FFCF33;
+  outline-offset: 2px;
+}
+
+.header-nav .header-menu li:focus {
+  outline: 2px solid #FFCF33;
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hamburger,
+  .hamburger span,
+  .header,
+  .header-nav .header-menu li,
+  .cta-navbar {
+    transition: none;
+  }
 }

@@ -2,6 +2,9 @@ import React, { FC, useState, useCallback, useMemo, useRef } from "react";
 import "../index.css";
 import "../styles/components/Founders.css"
 import fundador from "../assets/fundador.jpeg";
+import Ausina from "../assets/founders/Ausina.jpg";
+import Alberto from "../assets/founders/Alberto.jpg";
+import Sergio from "../assets/founders/Sergio.jpg";
 
 const TRANSITION_DURATION = 800;
 const VISIBLE_CARDS = 5;
@@ -14,13 +17,13 @@ const Founders: FC = () => {
     const transitionTimeoutRef = useRef<number | null>(null);
 
     const founders = useMemo(() => [
-        { id: 1, name: "Alejandro", position: "CEO", image: fundador },
+        { id: 1, name: "Alejandro", position: "CEO", image: Ausina },
         { id: 2, name: "Ioana", position: "CTO", image: fundador },
         { id: 3, name: "Mario", position: "CMO", image: fundador },
-        { id: 4, name: "Sergio", position: "CFO", image: fundador },
+        { id: 4, name: "Sergio", position: "CFO", image: Sergio },
         { id: 5, name: "Enrique", position: "COO", image: fundador },
         { id: 6, name: "Rubén", position: "CIO", image: fundador },
-        { id: 7, name: "Alberto", position: "CTO", image: fundador },
+        { id: 7, name: "Alberto", position: "CTO", image: Alberto },
     ], []);
 
     const handleTransition = useCallback((direction: 'left' | 'right', indexChange: number) => {
