@@ -1,8 +1,29 @@
 .hero {
   position: relative;
-  height: 100vh;
   background-color: #45BAED;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+
+
+@media (max-width: 768px) {
+  .content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .hero .content h1{
+    font-size: 3rem;
+  }
 }
 
 .semicirculos {
@@ -24,6 +45,7 @@
 .semicirculos img {
   width: 100%;
   height: auto;
+  overflow: hidden;
 }
 
 .circulo {
@@ -35,6 +57,7 @@
   transform: translate(50%, 50%);
   z-index: 500;
   animation: rotateCircle 15s linear infinite;
+  overflow: hidden;
 }
 
 @keyframes rotateCircle {
@@ -50,29 +73,37 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .elipse {
   position: absolute;
   right: 0;
+  overflow: hidden;
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2000;
-  color: #ffffff;
-  text-align: center;
+  position: static; /* ya no necesita posicionamiento */
+  transform: none;
   width: 100%;
   max-width: 800px;
+  text-align: center;
+  padding: 1rem;
+  z-index: 2000;
+  color: white;
 }
 
 .content h1 {
   font-weight: bold;
-  font-size: 2rem;
   padding: 1rem;
+
+  font-size: 4rem; 
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  z-index: 1;
 }
 
 .cta {
@@ -182,7 +213,8 @@
 
     .semicirculos {
       width: 40%;
-      animation: floatDown 8s linear infinite
+      animation: floatDown 8s linear infinite;
+      overflow: hidden;
     }
 
     @keyframes floatDown {
@@ -214,6 +246,7 @@
     .circulo {
       width: 50%;
       height: auto;
+      overflow: hidden;
     }
 
     .content {

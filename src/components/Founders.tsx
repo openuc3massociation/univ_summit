@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback, useMemo, useRef } from "react";
+import React, { FC, useState, useCallback, useMemo} from "react";
 import "../index.css";
 import "../styles/components/Founders.css"
 import fundador from "../assets/fundador.jpeg";
@@ -13,8 +13,8 @@ const Founders: FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [slideDirection, setSlideDirection] = useState<'left' | 'right' | null>(null);
-    const [exitingCards, setExitingCards] = useState<{[key: number]: string}>({});
-    const transitionTimeoutRef = useRef<number | null>(null);
+    //const [exitingCards, setExitingCards] = useState<{[key: number]: string}>({});
+    //const transitionTimeoutRef = useRef<number | null>(null);
 
     const founders = useMemo(() => [
         { id: 1, name: "Alejandro", position: "CEO", image: Ausina },
@@ -77,7 +77,7 @@ const Founders: FC = () => {
 
     return (
         <section className="founders">
-            <h1>NUESTROS FUNDADORES</h1>
+            <h2>NUESTROS FUNDADORES</h2>
             <div className="founders-carousel">
                 <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
                     &#8249;

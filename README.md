@@ -52,3 +52,15 @@ export default tseslint.config({
   },
 })
 ```
+
+To run it for the first time, you might see a lot of "errors", but make sure to follow these steps:
+
+1. Install "npm install"
+
+If you keep having errors, install the types:
+2. npm install --save-dev @types/react @types/react-dom
+
+
+For the redirection, you might see another error:
+3. npm install react-router-dom
+

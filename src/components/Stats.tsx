@@ -66,7 +66,7 @@ const Stats: FC = () => {
                         <img src={mision_arriba} alt="Semicírculo misión arriba" />
                     </div>
                     <h2>NUESTRA MISIÓN</h2>
-                    <p>No vamos a descansar hasta que consigamos que puedas poner al servicio de tu desarrollo profesional todo tu potencial.
+                    <p>Hacer de la universidad un punto de encuentro, de excelencia y en el que los alumnos puedan poner en práctica, de manera profesional, lo aprendido en las clases
                         <br /><br />
                     De la mano de referentes en el sector, este evento va a ser el exponente que necesita tu esfuerzo para multiplicarse y descubrirte un nuevo horizonte.</p>
                     <div className="mision-abajo">
@@ -81,7 +81,12 @@ const Stats: FC = () => {
                         <img src={valores_lado} alt="Semicírculo valores lado" />
                     </div> 
                     <h2>NUESTROS VALORES</h2>
-                    <p>Innovarte</p>
+                    <ul>
+                        <li>La excelencia incondicional</li>
+                        <li>Compromiso con la generación universitaria</li>
+                        <li>Visión de futuro</li>
+                        <li>Ganas de provocar un cambio</li>
+                    </ul>
                     <div className="valores-abajo">
                         <img src={valores_abajo} alt="Semicírculo valores arriba" />
                     </div>

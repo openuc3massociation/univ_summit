@@ -99,7 +99,7 @@ const Hero: FC = () => {
         <img src={elipse} alt="Elipse decorativa" />
       </div>
       <div className="content">
-        <h1>Tu uni es más de lo que crees...</h1>
+        <h1 className="h1">Tu uni es más de lo que crees...</h1>
         <div className="countdown">
           <div className="countdown-item">
             <span className="countdown-number animated-number">{animatedTime.days}</span>
