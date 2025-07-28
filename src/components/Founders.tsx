@@ -6,6 +6,8 @@ import Ausina from "../assets/founders/Ausina.jpg";
 import Alberto from "../assets/founders/Alberto.jpg";
 import Sergio from "../assets/founders/Sergio.jpg";
 import Ioana from "../assets/founders/Ioana.jpg";
+import Mario from "../assets/founders/Mario.jpg";
+import Rubén from "../assets/founders/Rubén.jpg";
 
 const TRANSITION_DURATION = 800;
 const VISIBLE_CARDS = 5;
@@ -20,11 +22,11 @@ const Founders: FC = () => {
     const founders = useMemo(() => [
         { id: 1, name: "Alejandro Ausina", image: Ausina },
         { id: 2, name: "Ioana Nedelcu", image: Ioana },
-        { id: 3, name: "Mario Castro", image: fundador },
+        { id: 3, name: "Mario Castro", image: Mario },
         { id: 4, name: "Sergio Palacio", image: Sergio },
         { id: 5, name: "Enrique Casado", image: fundador },
-        { id: 6, name: "Rubén Estebala", image: fundador },
-        { id: 7, name: "Alberto Minaya", position: "CTO", image: Alberto },
+        { id: 6, name: "Rubén Estebala", image: Rubén },
+        { id: 7, name: "Alberto Minaya", image: Alberto },
     ], []);
 
     const handleTransition = useCallback((direction: 'left' | 'right', indexChange: number) => {
