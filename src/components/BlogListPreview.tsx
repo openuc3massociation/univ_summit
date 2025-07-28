@@ -7,7 +7,7 @@ const BlogListPreview = () => {
   return (
     <section className="bg-white py-10">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="blog-list-h2">Últimos artículos</h2>
+        <h2 className="blog-list-h2">ÚLTIMOS ARTÍCULOS</h2>
 
         <div
           className={`blog-list ${latest.length === 1 ? "single" : ""}`}

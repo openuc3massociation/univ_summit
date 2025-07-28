@@ -106,13 +106,13 @@
   }
 }
 
-/*----------------------------------------Bubbles Section - MOBILE FIRST RESPONSIVE (ALWAYS ROW)-----------------------------------------------*/
+/*----------------------------------------Bubbles Section - MOBILE FIRST RESPONSIVE-----------------------------------------------*/
 .bubbles{
   background-color: #FFCF33;
   padding: 0;
   position: relative;
   overflow: hidden;
-  height: 40vh;
+  height: auto;
   align-items: center;
 }
 
@@ -145,7 +145,7 @@
   z-index: 2;
   width: 100%;
   max-width: none;
-  height: auto;
+  height: 80px;
   background: transparent;
   margin: 30% auto;
   display: flex;
@@ -179,17 +179,20 @@
 ============================================== */
 @media (min-width: 480px) {
   .bubbles {
-    height: 75vh;
+    height: auto;
   }
 
   .bubble {
     padding: 1.5rem 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     gap: 1.2rem;
+    margin: 110px auto;
   }
   
   .bubble-img {
-    width: 130px;
-    height: 130px;
+    width: 200px;
+    height: 200px;
     border: 3px solid #FFCF33;
     border-radius: 18px;
   }
@@ -199,6 +202,10 @@
    TABLET PORTRAIT (768px+)
 ============================================== */
 @media (min-width: 768px) {
+.bubbles {
+  height: auto;
+}
+
   .bubble {
     margin: 120px auto;
     padding: 2rem 1.5rem;
@@ -218,12 +225,14 @@
 ============================================== */
 @media (min-width: 1024px) {
   .bubbles {
-    height: 100vh;
+    height: auto;
   }
 
   .bubble {
-    margin: 150px auto;
+    margin: 180px auto;
     padding: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     gap: 3rem;
     height: 280px;
   }
@@ -240,12 +249,12 @@
 ============================================== */
 @media (min-width: 1200px) {
   .bubbles {
-    height: 100vh;
+    height: auto;
   }
 
   .bubble {
     margin: 180px auto;
-    gap: 4rem;
+    gap: 2rem;
     height: 300px;
   }
   

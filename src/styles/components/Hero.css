@@ -9,6 +9,10 @@
   min-height: 100dvh;
 }
 
+.content h1 {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
 
 
 @media (max-width: 768px) {
@@ -83,7 +87,7 @@
 }
 
 .content {
-  position: static; /* ya no necesita posicionamiento */
+  position: static;
   transform: none;
   width: 100%;
   max-width: 800px;
