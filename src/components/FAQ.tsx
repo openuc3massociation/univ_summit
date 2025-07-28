@@ -11,7 +11,7 @@ type FAQItem = {
 const faqData: FAQItem[] = [
     {
         question: "¿Qué días se celebrará el evento?",
-        answer: "El evento se celebrará los días 15 y 16 de Marzo",
+        answer: "El evento se celebrará en Febrero, atentos para los días...",
         color: "blue",
     },
     {

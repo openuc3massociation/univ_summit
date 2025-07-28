@@ -42,7 +42,7 @@ const Hero: FC = () => {
 
   // Actualizar contador en tiempo real
   useEffect(() => {
-    const targetDate = new Date('2026-03-12T00:00:00').getTime();
+    const targetDate = new Date('2026-02-12T00:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
