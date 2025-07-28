@@ -4,7 +4,16 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-    build: {
-    outDir: 'dist'
+  build: {
+    outDir: 'dist',
+    cssCodeSplit: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      }
+    }
+  },
+  css: {
+    devSourcemap: true
   }
 })
