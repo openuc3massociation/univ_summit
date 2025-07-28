@@ -85,13 +85,13 @@
 
 @media (max-width: 768px) {
   .about {
-    max-width: 768px;
+    max-width: 100%;
+    padding: 3rem 1.5rem;
   }
 
   .about-content{
     flex-direction: column;
   }
-
 }
 
 .about-roadmap {
@@ -136,9 +136,8 @@
 
 .roadmap-point:nth-child(2) .point-content {
   position: absolute;
-  top: 20px;
-  z-index: 7;
   top: -10%;
+  z-index: 7;
   height: fit-content;
 }
 
@@ -353,7 +352,7 @@
   
   .point-content {
     min-width: 85px !important;
-    max-width: 95px !important;
+    max-width: 100px !important;
     padding: 0.4rem 0.5rem !important;
     border-radius: 5px !important;
   }
