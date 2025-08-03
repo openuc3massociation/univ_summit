@@ -6,7 +6,7 @@ import valores_arriba from "../assets/valores-arriba.svg";
 import valores_lado from "../assets/valores-lado.svg";
 import mision_abajo from "../assets/mision-abajo.svg";
 import mision_arriba from "../assets/mision-arriba.svg"
-import startup from "../assets/one_pager_startups.png"
+import startup from "../assets/one_pager_startups.jpg"
 import asociaciones from "../assets/one_pager_asociaciones.jpg"
 import empresas from "../assets/one_pager_empresas.jpg"
 
