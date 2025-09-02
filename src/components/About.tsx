@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import evento from "../assets/Evento_prototipo.jpg";
+import evento from "../assets/hero_bg.jpg";
 import "../index.css";
 import "../styles/components/About.css"
 

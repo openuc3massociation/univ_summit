@@ -119,11 +119,11 @@ const Hero: FC = () => {
           </div>
         </div>
         <div className="email-container">
-          <input type="email" placeholder="¡Apúntate!" className="email-input" />
-          <button className="email-button">
-            <span>→</span>
-          </button>
+          <input type="email" placeholder="Déjanos tu correo..." className="email-input" />
         </div>
+        <button className="email-button">
+            <span>¡Apúntate ya!→</span>
+        </button>
         <p>4 años, 1.461 días, 35.064 horas, 2.103.840 minutos y 126.230.400 segundos</p>
         <br />
         <p>Demasiado tiempo dura tu etapa universitaria como para dedicarla solo a las clases y a los exámenes.</p>

@@ -39,9 +39,9 @@ const Header: FC = () => {
         <div className={`header ${isMenuOpen ? 'nav-open' : ''}`}>
           <nav className="header-nav">
             <ul className="header-menu">
-              <li onClick={closeMenu}><Link to="/agenda">AGENDA</Link></li>
+              {/*<li onClick={closeMenu}><Link to="/agenda">AGENDA</Link></li>
               <li onClick={closeMenu}><Link to="/ponentes">PONENTES</Link></li>
-              <li onClick={closeMenu}><Link to="/patrocinadores">PATROCINADORES</Link></li>
+              <li onClick={closeMenu}><Link to="/patrocinadores">PATROCINADORES</Link></li>*/}
               <button className="cta-navbar" onClick={closeMenu}><Link to="/contacto">APÚNTATE</Link></button>
             </ul>
           </nav>
