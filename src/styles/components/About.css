@@ -65,6 +65,10 @@
   padding: 1rem;
 }
 
+.about-text p {
+  margin-right: 30%;
+}
+
 .about-text h2 {
   font-weight: 400;
   font-size: 2rem;

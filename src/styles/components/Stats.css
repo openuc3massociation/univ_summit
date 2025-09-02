@@ -296,7 +296,7 @@
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   position: relative;
   align-items: center;
   text-align: center;
@@ -310,8 +310,8 @@
   font-weight: bold;
   margin: 0 0 1.5rem 0;
   letter-spacing: 2px;
-  z-index: 10;
-  position: relative;
+  z-index: 10000;
+  position: relative;  
 }
 
 .mission-section p,
@@ -322,7 +322,7 @@
   margin-bottom: 1rem;
   font-weight: 300;
   max-width: 90%;
-  z-index: 10;
+  z-index: 10000;
   position: relative;
 }
 
