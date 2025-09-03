@@ -317,7 +317,7 @@
   font-weight: bold;
   margin: 0 0 1.5rem 0;
   letter-spacing: 2px;
-  z-index: 10000;
+  z-index: 1000;
   position: relative;  
 }
 
@@ -548,7 +548,7 @@
 .onepager-title {
   text-align: center;
   margin: 4rem 0 2rem 0;
-  z-index: 10001;
+  z-index: 2;
   position: relative;
 }
 
