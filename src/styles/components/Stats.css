@@ -154,7 +154,7 @@
   max-width: none;
   height: 80px;
   background: transparent;
-  margin: 30% auto 2rem auto;
+  margin: 2rem auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -240,7 +240,7 @@
   }
 
   .bubble {
-    margin: 180px auto;
+    margin: 3rem auto;
     padding: 2rem;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -547,7 +547,7 @@
 
 .onepager-title {
   text-align: center;
-  margin: 0 0 2rem 0;
+  margin: 4rem 0 2rem 0;
   z-index: 10001;
   position: relative;
 }

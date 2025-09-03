@@ -54,6 +54,9 @@ const Stats: FC = () => {
                 ))}
             </section>
             <section className="bubbles">
+                <div className="onepager-title">
+                    <h1>CHEQUEA NUESTROS ONEPAGERS</h1>
+                </div>
                 <div className="bubble">
                     <a href="/unisummit_dia_empresas_onepager.pdf" download>
                         <img src={empresas} alt="Empresas" className="bubble-img" />
@@ -64,9 +67,6 @@ const Stats: FC = () => {
                     <a href="/unisummit_dia_asociaciones_onepager.pdf" download>
                         <img src={asociaciones} alt="Participantes" className="bubble-img" />
                     </a>
-                </div>
-                <div className="onepager-title">
-                    <h1>CHEQUEA NUESTROS ONEPAGERS</h1>
                 </div>
             </section>
             <section className="mission-values">
