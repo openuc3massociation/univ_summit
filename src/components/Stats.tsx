@@ -7,7 +7,7 @@ import valores_lado from "../assets/valores-lado.svg";
 import mision_abajo from "../assets/mision-abajo.svg";
 import mision_arriba from "../assets/mision-arriba.svg"
 import startup from "../assets/one_pager_startups.jpg"
-import asociaciones from "../assets/one_pager_asociaciones.jpg"
+import asociaciones from "../assets/one_pager_asociaciones.png"
 import empresas from "../assets/one_pager_empresas.jpg"
 
 interface StatItemProps {
@@ -64,6 +64,9 @@ const Stats: FC = () => {
                     <a href="/unisummit_dia_asociaciones_onepager.pdf" download>
                         <img src={asociaciones} alt="Participantes" className="bubble-img" />
                     </a>
+                </div>
+                <div className="onepager-title">
+                    <h1>CHEQUEA NUESTROS ONEPAGERS</h1>
                 </div>
             </section>
             <section className="mission-values">

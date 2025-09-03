@@ -50,6 +50,13 @@
   .stat-item p {
     font-size: 1rem;
   }
+
+  .onepager-title h1{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #22628A;
+    letter-spacing: 2px;
+  }
 }
 
 /* ==============================================
@@ -147,7 +154,7 @@
   max-width: none;
   height: 80px;
   background: transparent;
-  margin: 30% auto;
+  margin: 30% auto 2rem auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -535,5 +542,57 @@
   .values-section p {
     font-size: 1.2rem;
     max-width: 500px;
+  }
+}
+
+.onepager-title {
+  text-align: center;
+  margin: 0 0 2rem 0;
+  z-index: 10001;
+  position: relative;
+}
+
+.onepager-title h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #22628A;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN FOR ONEPAGER TITLE
+============================================== */
+
+/* MOBILE SMALL (480px+) */
+@media (min-width: 480px) {
+  .onepager-title h1 {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* TABLET (768px+) */
+@media (min-width: 768px) {
+  .onepager-title h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
+  .onepager-title h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* LARGE DESKTOP (1200px+) */
+@media (min-width: 1200px) {
+  .onepager-title h1 {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
   }
 }
