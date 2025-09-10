@@ -20,13 +20,13 @@ const Founders: FC = () => {
     //const transitionTimeoutRef = useRef<number | null>(null);
 
     const founders = useMemo(() => [
-        { id: 1, name: "Alejandro Ausina", image: Ausina },
-        { id: 2, name: "Ioana Nedelcu", image: Ioana },
-        { id: 3, name: "Mario Castro", image: Mario },
-        { id: 4, name: "Sergio Palacio", image: Sergio },
-        { id: 5, name: "Enrique Casado", image: Enrique },
-        { id: 6, name: "Rubén Estebala", image: Rubén },
-        { id: 7, name: "Alberto Minaya", image: Alberto },
+        { id: 1, name: "Alejandro Ausina", image: Ausina, linkedin: 'https://www.linkedin.com/in/alejandro-ausina/'},
+        { id: 2, name: "Ioana Nedelcu", image: Ioana, linkedin: 'https://www.linkedin.com/in/ioananedelcu/' },
+        { id: 3, name: "Mario Castro", image: Mario, linkedin: 'https://www.linkedin.com/in/mario-castro-uc3m/' },
+        { id: 4, name: "Sergio Palacio", image: Sergio, linkedin: 'https://www.linkedin.com/in/sergio-palacio-ma%C5%BEuran-422046221/' },
+        { id: 5, name: "Enrique Casado", image: Enrique, linkedin: 'https://www.linkedin.com/in/enriquecasadoromero/' },
+        { id: 6, name: "Rubén Estebala", image: Rubén, linkedin: 'https://www.linkedin.com/in/rub%C3%A9n-estebala/' },
+        { id: 7, name: "Alberto Minaya", image: Alberto, linkedin: 'https://www.linkedin.com/in/alberto-minaya-lopez/' },
     ], []);
 
     const handleTransition = useCallback((direction: 'left' | 'right', indexChange: number) => {
@@ -102,11 +102,13 @@ const Founders: FC = () => {
                                 className={`founder-card position-${index} ${founder.isCenter ? 'center' : ''} ${isTransitioning ? 'transitioning' : ''} ${slideClass}`}
                                 onClick={() => handleCardClick(founder.position)}
                             >
-                                <img
-                                    src={founder.image}
-                                    alt={founder.name}
-                                    className="founder-img"
-                                />
+                                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src={founder.image}
+                                        alt={founder.name}
+                                        className="founder-img"
+                                    />
+                                </a>
                                 <div className="founder-info">
                                     <h3>{founder.name}</h3>
                                 </div>

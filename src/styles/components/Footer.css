@@ -38,6 +38,11 @@
   letter-spacing: 1px;
 }
 
+.redes-icon {
+  height: 30px;
+  margin: 0.5rem;
+}
+
 /* ==============================================
    LARGE MOBILE (480px+)
 ============================================== */
@@ -63,13 +68,15 @@
   .footer {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 2rem 3rem;
     gap: 0;
-    text-align: left;
+    text-align: center;
   }
   
   .footer-logo {
     justify-content: flex-start;
+    flex: 1;
   }
   
   .footer-logo img {
@@ -78,12 +85,19 @@
   }
   
   .contacto {
-    justify-content: flex-end;
+    justify-content: center;
+    flex: 1;
   }
   
   .contacto p {
-    padding-left: 1rem;
+    padding: 0;
     font-size: 1.1rem;
+  }
+  
+  .redes {
+    justify-content: flex-end;
+    flex: 1;
+    display: flex;
   }
 }
 
