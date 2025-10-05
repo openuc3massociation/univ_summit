@@ -121,35 +121,39 @@ const Hero: FC = () => {
         <div className="email-container">
           <input type="email" placeholder="Déjanos tu correo..." className="email-input" id="emailInput" />
         </div>
-        <button className="email-button" onClick={async () => {
-          const input = document.getElementById('emailInput');
-          const email = input.value.trim();
-          
-          if (!email) {
-            alert('Por favor, introduce un correo electrónico válido.');
-            return;
-          }
+        <button
+          className="email-button"
+          onClick={async () => {
+            const input = document.getElementById('emailInput') as HTMLInputElement | null;
+            const email = input?.value.trim() || '';
 
-          try {
-            const response = await fetch('https://pmakdmy.app.n8n.cloud/webhook/2646569e-9150-441d-8034-1e0433a1bf00', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({ email })
-            });
-
-            if (response.ok) {
-              alert('¡Gracias! Estás apuntado correctamente.');
-              input.value = '';
-            } else {
-              alert('Hubo un problema al enviar tu correo. Por favor, inténtalo de nuevo más tarde.');
+            if (!email) {
+              alert('Por favor, introduce un correo electrónico válido.');
+              return;
             }
-          } catch (error) {
-            console.error(error);
-            alert('Error de conexión con el servidor.');
-          }
-        }}>
+
+            try {
+              const response = await fetch(
+                'https://pmakdmy.app.n8n.cloud/webhook/2646569e-9150-441d-8034-1e0433a1bf00',
+                {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ email }),
+                }
+              );
+
+              if (response.ok) {
+                alert('¡Gracias! Estás apuntado correctamente.');
+                input!.value = ''; // el "!" le dice a TS: “sé que existe, tranquilo”
+              } else {
+                alert('Hubo un problema al enviar tu correo. Inténtalo más tarde.');
+              }
+            } catch (error) {
+              console.error(error);
+              alert('Error de conexión con el servidor.');
+            }
+          }}
+        >
             <span>¡Apúntate ya! →</span>
         </button>
         <p>4 años, 1.461 días, 35.064 horas, 2.103.840 minutos y 126.230.400 segundos</p>
