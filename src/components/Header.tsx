@@ -42,7 +42,9 @@ const Header: FC = () => {
               {/*<li onClick={closeMenu}><Link to="/agenda">AGENDA</Link></li>
               <li onClick={closeMenu}><Link to="/ponentes">PONENTES</Link></li>
               <li onClick={closeMenu}><Link to="/patrocinadores">PATROCINADORES</Link></li>*/}
-              <button className="cta-navbar" onClick={closeMenu}><Link to="/contacto">APÚNTATE</Link></button>
+              <a href="https://pmakdmy.app.n8n.cloud/form/ff0a62b8-306f-4251-b635-513379c47652" target="_blank" rel="noopener noreferrer">
+                <button className="cta-navbar" onClick={closeMenu}>APÚNTATE</button>
+              </a>
             </ul>
           </nav>
         </div>

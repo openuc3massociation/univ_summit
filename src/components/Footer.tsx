@@ -12,7 +12,7 @@ const Footer: FC = () => (
             <img src={logo} alt="Uni Summit logo" />
         </div>
         <div className="contacto">
-            <p>contacto@unisummit.org</p>
+            <a href="mailto:contacto@unisummit.org"><p>contacto@unisummit.org</p></a>
         </div>
         <div className="redes">
             <a href='https://www.linkedin.com/company/unisummitmadrid/' target="_blank" rel="noopener noreferrer">

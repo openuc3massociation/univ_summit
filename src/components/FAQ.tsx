@@ -11,12 +11,12 @@ type FAQItem = {
 const faqData: FAQItem[] = [
     {
         question: "¿Qué días se celebrará el evento?",
-        answer: "El evento se celebrará en Febrero, atentos para los días...",
+        answer: "El evento se celebrará los días 5 y 6 de febrero de 2026.",
         color: "blue",
     },
     {
         question: "¿Dónde se llevará a cabo el evento?",
-        answer: "El evento tendrá lugar en la Universidad Carlos III de Madrid.",
+        answer: "El evento tendrá lugar en el campus de Getafe de la Universidad Carlos III de Madrid.",
         color: "yellow",
     },
     {

@@ -42,8 +42,8 @@ const StatItem: FC<StatItemProps> = ({label, text}) => {
 const Stats: FC = () => {
     const stats = [
         { label: '+10', text: 'EMPRESAS MULTINACIONALES' },
-        { label: '+100', text: 'STARTUPS DE UC3M' },
-        { label: '+300', text: 'PARTICIPANTES UNIVERSITARIOS' },
+        { label: '+8', text: 'STARTUPS DE UC3M' },
+        { label: '+500', text: 'PARTICIPANTES UNIVERSITARIOS' },
     ];
 
     return (

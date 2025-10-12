@@ -44,13 +44,13 @@ const About: FC = () => (
           
           <div className="roadmap-point">
             <div className="point-content content-up">
-              <h3>HUB UNIVERSITARIO</h3>
-              <p>Iniciativas puramente universitarias: Asociaciones, grupos de investigación... Todo lo que ofrece la uni en el campus</p>
+              <h3>EMPRESAS</h3>
+              <p>Cuando acabas la carrera, siempre surge la pregunta "¿Y ahora qué?". Descubre qué hay después de la universidad</p>
             </div>
             <div className="point-line line-up"></div>
             <div className="point-circle"></div>
           </div>
-          
+
           <div className="roadmap-point">
             <div className="point-circle"></div>
             <div className="point-line line-down"></div>
@@ -60,14 +60,7 @@ const About: FC = () => (
             </div>
           </div>
           
-          <div className="roadmap-point">
-            <div className="point-content content-up">
-              <h3>EMPRESAS</h3>
-              <p>Cuando acabas la carrera, siempre surge la pregunta "¿Y ahora qué?". Descubre qué hay después de la universidad</p>
-            </div>
-            <div className="point-line line-up"></div>
-            <div className="point-circle"></div>
-          </div>
+          
         </div>
       </div>
     </div>  
