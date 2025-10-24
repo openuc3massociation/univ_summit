@@ -64,9 +64,6 @@ const Stats: FC = () => {
                     <a href="/unisummit_dia_startups_onepager.pdf" download>
                         <img src={startup} alt="Startups" className="bubble-img" />
                     </a>
-                    <a href="/unisummit_dia_asociaciones_onepager.pdf" download>
-                        <img src={asociaciones} alt="Participantes" className="bubble-img" />
-                    </a>
                 </div>
             </section>
             <section className="mission-values">
